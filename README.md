@@ -116,7 +116,8 @@ The core classes and files:
 
 # File Structure:
 
-![Untitled](Documentation%203e14db849a464392b00df46e9b7cecda/Untitled.png)
+![image](https://github.com/NITHISH862002/SVG_PARSER/assets/75006432/d6a3bc56-2291-4554-8b62-7a74b1923d1a)
+
 
 # Output:
 
@@ -233,7 +234,8 @@ Why we chose PugiXML
 
 Link = [xml parsing - What XML parser should I use in C++? - Stack Overflow](https://stackoverflow.com/questions/9387610/what-xml-parser-should-i-use-in-c)
 
-![Untitled](Documentation%203e14db849a464392b00df46e9b7cecda/Untitled%201.png)
+![image](https://github.com/NITHISH862002/SVG_PARSER/assets/75006432/413f1661-9357-48ff-876b-b54004b52918)
+
 
 # Steps to run the program.
 
