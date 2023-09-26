@@ -1,0 +1,784 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Documentation</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="3e14db84-9a46-4392-b00d-f46e9b7cecda" class="page serif"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 28.669999999999995%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">📄</span></div><h1 class="page-title">Documentation</h1><p class="page-description"></p></header><div class="page-body"><h1 id="c1614460-2aad-4b7d-a713-75309808cb8e" class="">Overview:</h1><p id="f701da4d-b737-42f6-a464-bb3bcccafcbf" class="">This program allows the user to load an SVG file, view detailed counts of elements in the file, add new elements through a interactive menu, and export the updated SVG as both SVG and JSON files.</p><p id="45e75067-0c1a-4f0b-b1e8-65964ba5df04" class="">Key capabilities:</p><ul id="b121fe3a-4da4-4ba0-921e-d9cdde3af8e8" class="bulleted-list"><li style="list-style-type:disc">Parse SVG file into an object model</li></ul><ul id="fe916798-4792-4875-9fe1-9e94659b83c7" class="bulleted-list"><li style="list-style-type:disc">Display counts of all SVG elements and attributes</li></ul><ul id="7f8c7f35-7504-4ecb-8dc7-191b49887f5b" class="bulleted-list"><li style="list-style-type:disc">Add new SVG shapes and elements through user menu.</li></ul><ul id="9c209183-4152-4151-8563-d1c15724cba3" class="bulleted-list"><li style="list-style-type:disc">Dynamically update the SVG object model</li></ul><ul id="066f822c-30f3-411a-ae23-73f6702062a0" class="bulleted-list"><li style="list-style-type:disc">Output updated SVG as both SVG and JSON formats</li></ul><ul id="6d05accb-f23a-4f67-aabd-221872b3588f" class="bulleted-list"><li style="list-style-type:disc">Provide a clean interface for SVG manipulation.</li></ul><p id="1591398f-fa0b-406f-8baf-1f3f38f92b0a" class="">The core classes and files:</p><ul id="3a2858d2-68af-4f03-b8d5-a916f2411a41" class="bulleted-list"><li style="list-style-type:disc"><code>Structure</code>: Primary class holding parsed SVG data<ul id="cf544f39-02e3-441b-812c-6405a0f2c88d" class="bulleted-list"><li style="list-style-type:circle">Contains vectors of shapes, attributes, and other SVG elements</li></ul><ul id="f7a65bf0-081e-4a2c-ab1c-70b037fa6494" class="bulleted-list"><li style="list-style-type:circle">Central repository for all SVG information</li></ul><ul id="5a549bea-7b27-4ba2-80c3-81281ff9248f" class="bulleted-list"><li style="list-style-type:circle">Updated as new elements are added.</li></ul></li></ul><ul id="74eba2c6-5435-4107-a16b-0bc16b319eb9" class="bulleted-list"><li style="list-style-type:disc"><code>Menu</code>: Displays interactive menus for viewing data and adding elements<ul id="2f65edac-682b-4ba7-8e3f-dc676635cc9b" class="bulleted-list"><li style="list-style-type:circle">Provides options to user and guides workflow</li></ul></li></ul><ul id="5edf1000-bd86-4d12-a79d-5b4b87cc6206" class="bulleted-list"><li style="list-style-type:disc"><code>ConvertingFilestoVectors</code>: Parses input SVG file into a Structure<ul id="546d32e0-6c46-430d-8052-15ba206edf51" class="bulleted-list"><li style="list-style-type:circle">Uses XML parser to load SVG and extract elements</li></ul><ul id="ee3df467-66ff-46f4-a613-872bf7419684" class="bulleted-list"><li style="list-style-type:circle">Populates Structure with shapes, attributes, etc.</li></ul></li></ul><ul id="b186fc2d-fba2-4fa2-abbb-363923115eb4" class="bulleted-list"><li style="list-style-type:disc"><code>Creator</code>: Contains functions to create new SVG elements<ul id="b5af59b1-529c-45e1-b1bb-8c4ecc6a97a0" class="bulleted-list"><li style="list-style-type:circle">Methods for each shape type to add to Structure</li></ul><ul id="0e0a0bf2-30d5-49dd-9520-92bc96319712" class="bulleted-list"><li style="list-style-type:circle">Options for user input of attributes</li></ul></li></ul><ul id="e0c86450-5449-4623-bc65-c91c78b786bd" class="bulleted-list"><li style="list-style-type:disc"><code>GenerateOutputFile</code>: Writes Structure object to output SVG file<ul id="6243ec9e-e901-4df3-a878-45d136c07fe9" class="bulleted-list"><li style="list-style-type:circle">SVG file reflects all additions and changes to Structure</li></ul><ul id="0ae75134-9629-4707-bac6-c0b9bfcd896b" class="bulleted-list"><li style="list-style-type:circle">Key class for SVG export</li></ul></li></ul><ul id="60ecefb6-ac96-422c-8f41-6a003b4b2db6" class="bulleted-list"><li style="list-style-type:disc"><code>SvgtoJson</code>: Converts final SVG file to JSON format<ul id="bc709ac1-11a2-420e-be62-cdb0d21cfd61" class="bulleted-list"><li style="list-style-type:circle">Outputs machine-readable JSON version of SVG</li></ul><ul id="d4f07187-16af-4502-9493-f31e2a4f07f9" class="bulleted-list"><li style="list-style-type:circle">Useful for web and mobile applications</li></ul></li></ul><ul id="b592d948-53ea-44cc-b4f7-ae317658d672" class="bulleted-list"><li style="list-style-type:disc"><code>SecondOptionSwitch</code>: Displays count details of selected elements<ul id="d16dfddf-3666-463a-8827-d5b6c141b796" class="bulleted-list"><li style="list-style-type:circle">Provides granular view into Structure contents</li></ul><ul id="f2f46955-a203-420c-bf40-1580df0c2013" class="bulleted-list"><li style="list-style-type:circle">Counts by element and attribute types</li></ul></li></ul><h1 id="3d63296d-cce8-498b-9305-2204e45b7b41" class="">Detailed Program Flow:</h1><ol type="1" id="ad54af30-c8dd-4bc4-aaf9-5de21c331963" class="numbered-list" start="1"><li><strong>Get SVG filename</strong> from user</li></ol><ol type="1" id="98063074-cfb8-4987-87bd-48ceb4d6c6e1" class="numbered-list" start="2"><li><strong>Load and parse</strong> SVG file using <code>ConvertingFilestoVectors</code><ul id="7559d711-b7f2-4c93-814e-81625611a5fe" class="bulleted-list"><li style="list-style-type:disc">Populates <code>Structure</code> with all SVG data</li></ul></li></ol><ol type="1" id="c514daa9-ca3f-4337-aacf-a2cfd89de87b" class="numbered-list" start="3"><li><strong>Display main menu</strong> loop offering options:<ul id="df98ec2f-0126-4d9e-b214-417fe0d87e3d" class="bulleted-list"><li style="list-style-type:disc">View detailed SVG element/attribute counts</li></ul><ul id="6a32ba05-7309-4da5-b3c7-3bf1a6bd99fe" class="bulleted-list"><li style="list-style-type:disc">Add new elements through interactive menu</li></ul><ul id="77cb0d0a-33c8-4cf0-b541-92c296a9b969" class="bulleted-list"><li style="list-style-type:disc">Export updated SVG and convert to JSON</li></ul></li></ol><ol type="1" id="c717a40e-39cd-46c6-b972-7701d52f65d8" class="numbered-list" start="4"><li><strong>View counts:</strong> Show specific element/attribute counts<ul id="d36d62f6-51db-4c1d-934f-6b48cd166f5f" class="bulleted-list"><li style="list-style-type:disc">User selects type(s) to count from menu</li></ul><ul id="9726ac11-c05b-4282-ae78-b4a0ad24fe2f" class="bulleted-list"><li style="list-style-type:disc"><code>SecondOptionSwitch</code> displays totals from <code>Structure</code></li></ul></li></ol><ol type="1" id="127f1382-a125-4870-846f-3cc22190dd92" class="numbered-list" start="5"><li><strong>Add new element:</strong> Guide user through shape creation<ul id="0a4f34b1-3918-4755-8c93-7d28ac20f481" class="bulleted-list"><li style="list-style-type:disc">Menu options for shape type, attributes</li></ul><ul id="31ca5769-830b-4e72-88ee-a580d4bd9160" class="bulleted-list"><li style="list-style-type:disc"><code>Creator</code> class constructs new element</li></ul><ul id="10b54b7c-7656-4200-91ff-622e7b256793" class="bulleted-list"><li style="list-style-type:disc">Added to <code>Structure</code> for central management</li></ul></li></ol><ol type="1" id="2c76f1b4-d11c-41cb-868d-4a75f2008a13" class="numbered-list" start="6"><li><strong>Export SVG and JSON:</strong> Write out updated files<ul id="7d182f3c-42d7-442d-8f20-190090471149" class="bulleted-list"><li style="list-style-type:disc"><code>GenerateOutputFile</code> writes <code>Structure</code> to SVG file</li></ul><ul id="ad78acc5-6b26-4370-a3ab-fb42e3e014c1" class="bulleted-list"><li style="list-style-type:disc"><code>SvgtoJson</code> converts new SVG to JSON</li></ul><ul id="6ce411c7-72af-4c8c-94b1-b1d9cf52d49c" class="bulleted-list"><li style="list-style-type:disc">Provides updated SVG in two formats</li></ul></li></ol><ol type="1" id="38c87e0a-4e52-403f-906f-f4e408ac741d" class="numbered-list" start="7"><li><strong>Exit</strong> when user finishes workflow</li></ol><h1 id="e33cb6f8-196a-4cb2-bf4b-d5952825df1b" class="">Key Classes and Functions:</h1><p id="2d4c1c78-db05-4e6b-97de-ab200dd1562f" class=""><code><strong>Structure</strong></code><strong> Class</strong></p><ul id="be52f127-afb2-4294-a728-7c79cd4a104b" class="bulleted-list"><li style="list-style-type:disc"><code>Deque&lt;Element&gt; shapes</code>: Stores all SVG shape elements to maintain order</li></ul><ul id="2c4afc70-89bd-4b4b-a989-c5549d8b0a54" class="bulleted-list"><li style="list-style-type:disc"><code>Deque&lt;string&gt; elements</code>: All shape elements</li></ul><ul id="9dc15bec-fc8d-495e-86ac-44721c052e3c" class="bulleted-list"><li style="list-style-type:disc"><code>Deque&lt;Other&gt;</code>: Other SVG elements like <code>&lt;text&gt;</code>, <code>&lt;image&gt;</code> etc.</li></ul><ul id="81e70ecc-79d9-48e1-9c51-01e2ae1cd079" class="bulleted-list"><li style="list-style-type:disc">Getter methods to access internal data</li></ul><p id="7258d64c-820f-4ebf-9416-034248e1c2ae" class=""><code><strong>ConvertingFilestoVectors</strong></code><strong> Class</strong></p><ul id="9132f7f9-aca9-4536-8bde-b9cfecff6a02" class="bulleted-list"><li style="list-style-type:disc"><code>convertingFilestoVectors()</code>: Main parsing function<ul id="c46331ce-069b-4b85-9043-a24016ccfa3d" class="bulleted-list"><li style="list-style-type:circle">Loads SVG with PUGIXML parser</li></ul><ul id="efef4afd-71e4-4c5f-ac77-742143dac027" class="bulleted-list"><li style="list-style-type:circle">Extracts elements and attributes</li></ul><ul id="71143aa0-c005-4352-968a-070680856588" class="bulleted-list"><li style="list-style-type:circle">Populates Structure object</li></ul></li></ul><ul id="58eb1905-a352-4f25-b15f-7d97c0c7b401" class="bulleted-list"><li style="list-style-type:disc">Helper methods for parsing details</li></ul><p id="265fee37-affa-4a78-ad34-024cad2e344e" class=""><code><strong>Creator</strong></code><strong> Class</strong></p><ul id="111fe9b0-525f-453d-879e-3bc5e4a888ad" class="bulleted-list"><li style="list-style-type:disc"><code>createNewXxx()</code>: Methods for each shape type<ul id="620eaa2f-4c2a-4559-8f72-75fe9c09f7ff" class="bulleted-list"><li style="list-style-type:circle">Accept user input for attributes</li></ul><ul id="eb876ac3-dccf-4440-b1e9-848d832aba24" class="bulleted-list"><li style="list-style-type:circle">Return constructed shape element</li></ul></li></ul><ul id="69e810e6-74bb-4caa-9e18-1ba226ddbb77" class="bulleted-list"><li style="list-style-type:disc"><code>createNewXxxAsSingleAttribute()</code>: Create shape from single string</li></ul><p id="5ec0f179-5177-4baa-8774-354db4df4807" class=""><code><strong>GenerateOutputFile</strong></code><strong> Class</strong></p><ul id="78f7712e-9d64-472d-9db5-e36466e25f03" class="bulleted-list"><li style="list-style-type:disc"><code>createOutputFile()</code>: Writes Structure to SVG file<ul id="6fb0c699-d12d-4e30-9b92-429dbd730887" class="bulleted-list"><li style="list-style-type:circle">SVG contains all new elements added</li></ul><ul id="83e8b6e0-dd35-4be9-88ab-c321f8e65d94" class="bulleted-list"><li style="list-style-type:circle">Returns true if file written successfully</li></ul></li></ul><p id="800ae74d-da9b-4783-bb9c-73ecedada363" class=""><code><strong>SvgtoJson</strong></code><strong> Class</strong></p><ul id="7dc7114a-f835-420f-8b52-d422ecfeaf6c" class="bulleted-list"><li style="list-style-type:disc"><code>svgtojson()</code>: Converts SVG file to JSON<ul id="3b32cd1d-f21d-4573-afa6-4d23aa05d89d" class="bulleted-list"><li style="list-style-type:circle">Leverages SVG parser library</li></ul><ul id="0808f7df-94cb-432b-a2f8-5663079ac289" class="bulleted-list"><li style="list-style-type:circle">Outputs JSON file</li></ul></li></ul><p id="3f98c9b7-3f5d-48d7-972d-5f3eadb5248e" class=""><code><strong>SecondOptionSwitch</strong></code><strong> Class</strong></p><ul id="7e1dcd90-86f7-47a0-a255-1c341bbe5026" class="bulleted-list"><li style="list-style-type:disc"><code>check1()</code>: Displays counts of selected element/attribute types<ul id="ba4d5b6a-89a4-42af-994e-e66f5f332468" class="bulleted-list"><li style="list-style-type:circle">Extracts data from Structure based on menu option</li></ul><ul id="8f1911cb-38e3-4ab9-b7b3-bac1b53f0cb1" class="bulleted-list"><li style="list-style-type:circle">Prints totals for each selected type</li></ul></li></ul><p id="3abf04a2-6eb8-4071-a141-76ffc71d4580" class=""><code><strong>Menu</strong></code><strong> Class</strong></p><ul id="eb093f83-62af-4dab-b0af-1453c46122ed" class="bulleted-list"><li style="list-style-type:disc"><code>displayMenu()</code>: Shows main menu options</li></ul><ul id="7d407d9e-e81b-4968-bfd5-0f64eaf63e85" class="bulleted-list"><li style="list-style-type:disc"><code>displayCountMenu()</code>: Menu for count types</li></ul><ul id="b510108d-46c8-40e8-ab8f-32e70cc473a0" class="bulleted-list"><li style="list-style-type:disc"><code>displayAddElementMenu()</code>: Menu for adding new elements</li></ul><p id="b78e0bc4-0755-4499-be0e-5622a90a15a0" class=""><code><strong>main()</strong></code><strong> Function</strong></p><ul id="4fe0e338-22ca-428f-aa8b-8d7432ce5a58" class="bulleted-list"><li style="list-style-type:disc">Controls overall program flow</li></ul><ul id="88d6c07d-332e-4252-83fa-8d7703349e42" class="bulleted-list"><li style="list-style-type:disc">Initializes classes</li></ul><ul id="7bf05782-dc26-4079-904f-7550d88536f2" class="bulleted-list"><li style="list-style-type:disc">Calls key functions in sequence</li></ul><ul id="5658e3d0-c2fe-44f3-ad2b-32b4d8ad9b21" class="bulleted-list"><li style="list-style-type:disc">Manages SVG load, update, and export</li></ul><h1 id="3e447f17-e922-46f7-a74a-3cfb113b9c03" class="">File Structure:</h1><img style="width:384px" src="C:\Users\balasubr-6\Downloads\Documentation\Untitled.png	" /><h1 id="2a48cca1-72e8-4547-a9f0-9bfb27e7cbe6" class="">Output:</h1><pre id="f5ec1113-104e-435a-8eb4-cf35c877a53c" class="code"><code>PS D:\C++\SVG_Parser\Home_SVG_Parser&gt; cd &#x27;d:\C++\SVG_Parser\Home_SVG_Parser\output&#x27;
+PS D:\C++\SVG_Parser\Home_SVG_Parser\output&gt; &amp; .\&#x27;main.exe&#x27;
+Please Enter your file name like (../FOLDERNAME/FILENAME) :../TestFiles/test.svg
+Your File has been Loaded.. 
+
+***************************************
+              SVG PARSER
+***************************************
+        1.Count Number of Elements: 
+        2.Add new element: 
+        3.Create a new SVG and JSON File 
+        4.EXIT
+Enter an Option to proceed further: 1
+===========COUNT MENU===========
+        1.Display RECTANGLE count
+        2.Display CIRCLE count
+        3.Display ELLIPSE count
+        4.Display LINE count
+        5.Display POLYLINE count
+        6.Display POLYGON count
+        7.Display PATH count
+        8.Other tag:
+        9.Display ALL count
+        10.EXIT
+Select an option to display the count of an element/elements:
+9
+Number of Rectangles : 0
+Number of Circles : 0
+Number of Ellipse : 0
+Number of Line : 0
+Number of Polyline : 0
+Number of Polygon : 0
+Number of Path : 0
+Number of Groups:1
+Other tag:0
+
+***************************************
+              SVG PARSER
+***************************************
+        1.Count Number of Elements:
+        2.Add new element:
+        3.Create a new SVG and JSON File
+        4.EXIT
+Enter an Option to proceed further: 2
+SELECT AN OPTION TO ADD NEW ELEMENT
+        1. RECTANGLE
+        2. CIRCLE
+        3. ELLIPSE
+        4. LINE
+        5. POLYLINE
+        6. POLYGON
+        7. PATH
+        8. NEW TAG
+        9. EXIT
+Select an option to add a new element:
+1
+Enter option 1 to enter attribute values:
+Enter option 2 to enter the entire attribute:
+2
+Enter the attributes of rectangle:
+width=&quot;100&quot; height=&quot;100&quot; fill=&quot;red&quot;         
+
+***************************************
+              SVG PARSER
+***************************************
+        1.Count Number of Elements:
+        2.Add new element:
+        3.Create a new SVG and JSON File
+        4.EXIT
+Enter an Option to proceed further: 1
+===========COUNT MENU===========
+        1.Display RECTANGLE count
+        2.Display CIRCLE count
+        3.Display ELLIPSE count
+        4.Display LINE count
+        5.Display POLYLINE count
+        6.Display POLYGON count
+        7.Display PATH count
+        8.Other tag:
+        9.Display ALL count
+        10.EXIT
+Select an option to display the count of an element/elements:
+9
+Number of Rectangles : 1
+Number of Circles : 0
+Number of Ellipse : 0
+Number of Line : 0
+Number of Polyline : 0
+Number of Polygon : 0
+Number of Path : 0
+Number of Groups:1
+Other tag:0
+
+***************************************
+              SVG PARSER
+***************************************
+        1.Count Number of Elements:
+        2.Add new element:
+        3.Create a new SVG and JSON File
+        4.EXIT
+Enter an Option to proceed further: 3
+Enter the name for the SVG file (e.g., MyFile.svg): Test
+Your file has been saved as OutputFile.svg
+Your JSON file has been saved as output.json.
+Both SVG and JSON files have been created. Exiting...
+PS D:\C++\SVG_Parser\Home_SVG_Parser\output&gt;</code></pre><p id="d90271fe-0466-4beb-8c52-3ff3ada2ea12" class="">
+</p><p id="a0347b05-cb67-4fb3-b228-31b9ed647b39" class="">Why we chose PugiXML </p><p id="725c7d62-01df-40ad-b829-0bb8b742b444" class="">Link = <a href="https://stackoverflow.com/questions/9387610/what-xml-parser-should-i-use-in-c">xml parsing - What XML parser should I use in C++? - Stack Overflow</a></p><img style="width:384px" src="C:\Users\balasubr-6\Downloads\Documentation\Untitled 1.png" /><h1 id="bde6ec74-18d1-46e2-8ea5-a2149a2e20d0" class="">Steps to run the program</h1><ol type="1" id="1bdc05d9-1f41-429a-bb14-0588dc21cd25" class="numbered-list" start="1"><li>Start</li></ol><ol type="1" id="b1a2a047-b772-4d8c-a6cc-2d6cad2f4fd4" class="numbered-list" start="2"><li>Main.cpp ⇒ Run ⇒ user Input ⇒<code> ../TestFiles/test.svg</code></li></ol><ol type="1" id="15d81b57-d4a9-4709-a2f0-012209fb13dc" class="numbered-list" start="2"><li>Select the choice accordingly.</li></ol><ol type="1" id="0818554c-23c9-4ea5-a089-4476b3923d0d" class="numbered-list" start="3"><li>Stop</li></ol><h1 id="cf53d0d9-6f1c-4aaa-8d69-ca16766391c6" class="">Conclusion:</h1><p id="9372f594-8df9-4ec0-a536-35acc45e699d" class="">In summary, this program provides a comprehensive interface for SVG manipulation through parsing SVG into an object model, allowing dynamic updates, and outputting the modified SVG in multiple formats. The combination of classes handles each step from loading, editing, and exporting the SVG file.</p><p id="067a5432-5d6e-4e38-8179-2e273d35737f" class="">
+</p><p id="9ca0a5fb-36e0-499f-9d04-4b549bae4004" class="">
+</p></div></article></body></html>
